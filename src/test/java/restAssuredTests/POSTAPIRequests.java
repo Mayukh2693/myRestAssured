@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 import io.restassured.response.Response;
+import junit.framework.Assert;
 
 public class POSTAPIRequests extends BaseTest {
 
@@ -27,9 +28,9 @@ public class POSTAPIRequests extends BaseTest {
 		bookingdetails.setBookingDates(bookingdates);
 		Response resp =  given().contentType("application/json").accept("application/json").spec(requestSpec).body(bookingdetails)
 						.when().post("/booking");
-		
 		String response = resp.then().extract().path("").toString();
 		System.out.println(response);
+		Assert.assertEquals(resp.then().extract().path("booking.firstname").toString(), bookingdetails.getFirstName()); 
 			
 	}
 }

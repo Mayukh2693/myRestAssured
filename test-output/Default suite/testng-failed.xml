@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="demoRestAssured.demoRAMayukh.AuthToken">
+      <class name="restAssuredTests.POSTAPIRequests">
         <methods>
+          <include name="createBooking"/>
           <include name="setBaseURI"/>
-          <include name="GetAuthToken"/>
         </methods>
-      </class> <!-- demoRestAssured.demoRAMayukh.AuthToken -->
+      </class> <!-- restAssuredTests.POSTAPIRequests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
